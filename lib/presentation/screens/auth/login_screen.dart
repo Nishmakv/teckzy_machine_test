@@ -50,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                   AppTextField(
                     controller: authCubit.usernameController,
                     label: 'Username',
-                    hintText: 'Enter your mail/mobile',
+                    hintText: 'Enter your username',
                   ),
                   const SizedBox(height: 10),
                   AppTextField(
