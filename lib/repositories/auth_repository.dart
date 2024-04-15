@@ -4,7 +4,7 @@ import 'package:teckzy_machine_test/services/storage_service.dart';
 
 class AuthRepository {
   Dio client = Dio();
-  SharedPrefs prefs = SharedPrefs();
+  StorageService prefs = StorageService();
   Future userSignIn(String username, String password) async {
     final response = await client.post('https://dummyjson.com/auth/login',
         data: {

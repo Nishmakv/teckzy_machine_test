@@ -7,6 +7,7 @@ part 'auth_state.dart';
 
 class LoginCubit extends Cubit<AuthState> {
   AuthRepository authRepository = AuthRepository();
+
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   LoginCubit() : super(AuthInitial());
@@ -16,6 +17,7 @@ class LoginCubit extends Cubit<AuthState> {
     final dataResponse = await authRepository.userSignIn(
         usernameController.text, passwordController.text);
     if (dataResponse) {
+
       emit(AuthSuccess());
     } else {
       emit(AuthFailure());
