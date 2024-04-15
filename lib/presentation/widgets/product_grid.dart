@@ -11,8 +11,8 @@ class ProductGridWidget extends StatelessWidget {
 
     return BlocConsumer<ProductCubit, ProductState>(listener: (context, state) {
       if (state is ProductFailure) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(const SnackBar(content: Text("Product fetching failed")));
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Product fetching failed")));
       }
     }, builder: (context, state) {
       if (state is ProductLoading) {
