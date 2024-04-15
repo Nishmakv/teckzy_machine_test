@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teckzy_machine_test/bloc/auth_cubit.dart';
 import 'package:teckzy_machine_test/presentation/screens/auth/login_screen.dart';
 import 'package:teckzy_machine_test/utils/app_theme.dart';
 
+
 void main() {
-  runApp(MyApp());
+  runApp(BlocProvider(
+    create: (context) => LoginCubit(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
